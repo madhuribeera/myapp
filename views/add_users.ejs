@@ -1,0 +1,46 @@
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+            
+            <form method="post" action="/users/add">
+                <table cellpadding="11">
+                <tr>
+                    <td class="label">Name</td><td>: <input type="text" name="Name" required></td>
+                 </tr>
+
+                  <tr>
+                    <td class="label">Email</td><td>: <input type="text" name="Email" required></td>
+                 </tr>
+
+                  <tr>
+                    <td class="label">Phone</td><td>: <input type="text" name="Phone" required></td>
+                 </tr>
+		<tr>
+                    <td class="label">City</td><td>: <input type="text" name="City" required></td>
+                 </tr>
+		<tr>
+                    <td class="label">State</td><td>: <input type="text" name="State" required></td>
+                 </tr>
+                        <tr>
+                    <td class="label">Country</td><td>: <input type="text" name="Country" required></td>
+                 </tr>
+                        <tr>
+                    <td class="label">Zipcode</td><td>: <input type="text" name="Zipcode" required></td>
+                 </tr>
+     
+                   
+               
+                 
+                 <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelAdd()">
+                    </td>
+                 </tr>
+                </table>
+            </form>
+            
+        </div>
+        
+<%- include layouts/footer.ejs %>

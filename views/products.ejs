@@ -1,0 +1,52 @@
+<%- include layouts/header.ejs %>
+
+<div Class="page-data">
+<div Class="data-btn">
+    <button onClick="addProducts();">+ Add Products</button>
+</div>
+<div class="data-table">
+    <table border="2" cellpadding="7" cellspacing="7">
+        <tr>
+            <th width="50px">Id</th>
+            <th>categeory</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Image</th>
+            <th>Status</th>
+            <th width="120px">Action</th>
+        </tr>
+        <% if(data.length){
+            
+             for(var i = 0;i < data.length;i++) { %>
+                
+                <tr>
+                    <td align="center"><%= (i+1) %></td>
+                    <td align="center"><%= data[i].categeoryName %></td>
+                    <td align="center"><%= data[i].Name %></td>
+                    <td align="center"><%= data[i].Description %></td>
+                    <td align="center"><%= data[i].Price %></td>
+                    <td align="center"><%= data[i].Quantity %></td>
+                    <td align="center">
+                        <img src="<%= 'images/' + data[i].Image %>"  height="200" width="200"/>
+                    </td>
+                    <td align="center"><%= data[i].Status %></td>                   
+                    <td>
+                        <a class="a-inside edit" href="../products/edit/<%= data[i].productId %>">Edit</a>
+                       
+                        <a class="a-inside delete" href="../products/delete/<%= data[i].productId %>">Delete</a>
+                       
+                    </td>
+                </tr>
+        <% } 
+                }else{ %>
+                <tr>
+                    <td colspan="3">No Categeory</td>
+                </tr>
+        <%  } %>    
+       </table>
+    </div>
+</div>
+
+<%- include layouts/footer.ejs %>

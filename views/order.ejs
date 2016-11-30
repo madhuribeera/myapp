@@ -1,0 +1,50 @@
+<%- include layouts/header.ejs %>
+
+        <div class="page-data">
+        <div class="data-btn">
+           <button onClick="addorder()">+ Add</button>
+         </div>         
+         <div class="data-table">
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="50px">No</th>
+                    <th>username</th>
+                    <th>catgoryName</th>
+                    <th>productName</th>
+                    <th>totalamount</th>
+                    <th>orderStatus</th>
+                </tr>
+                               
+                <% if(data.length){ 
+                                
+                 for(var i = 0;i < data.length;i++) { %>
+                 
+                    <tr>
+                        <td><%=(i+1)%></td>
+                        <td><%=data[i].users%></td>
+                        <td><%=data[i].categeory%></td>
+                        <td><%=data[i].products%></td>
+                        <td><%=data[i].totalPrice%></td>
+                        <td><%=data[i].orderStatus%></td>
+                    
+                   
+                        <td>                       
+                            <a class="a-inside delete" href="../order/delete/<%= data[i].orderid %>">Delete</a>
+                       
+                        </td>
+                    
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No data avilable</td>
+                 </tr>
+            <% } %>
+                
+                              
+                
+            </table>
+         </div>
+        </div>
+        
+<%- include layouts/footer.ejs %>

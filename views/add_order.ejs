@@ -1,0 +1,42 @@
+<%- include layouts/header.ejs %>
+
+    <div class="page-data">
+        <form method="post" action="/order/add">
+            <table cellpadding="11">
+                <tr>
+                <td class="label">product</td>
+                    <td>
+                        <select name="productId">
+                        <% for(var i = 0; i < productsdata.length; i++) { %>
+                            <option value = "<%= productsdata[i].productId %>" > <%= productsdata[i].Name %> </option>
+                        <%  } %>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                <td class="label">users</td>
+                    <td>
+                        <select name="No">
+                        <% for(var i = 0; i < userdata.length; i++) { %>
+                            <option value = "<%= userdata[i].No %>" > <%= userdata[i].Name %> </option>
+                        <%  } %>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Quantity</td><td>:<input type="text" name="Quantity" placeholder="ex.Madhu" required></td>
+
+                </tr>
+              
+                <tr>
+                    <td class="label"></td>
+                    <td>
+                        &nbsp; <input type="submit" name="submit" value="Save">
+                       <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelorder()">
+                    </td>
+                 </tr>
+            </table>
+        </form>
+    </div>
+
+<%- include layouts/footer.ejs %>
